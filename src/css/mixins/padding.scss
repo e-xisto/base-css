@@ -1,0 +1,26 @@
+@mixin paddings($pos: "", $modif: "") {
+
+	.p#{$pos}-none 	{ padding#{$modif}: 0 !important; }
+	.p#{$pos}-xs 	{ padding#{$modif}: $base-space-size * 0.200 !important; }
+	.p#{$pos}-sm 	{ padding#{$modif}: $base-space-size * 0.666 !important; }
+	.p#{$pos} 		{ padding#{$modif}: $base-space-size * 1.000 !important; }
+	.p#{$pos}-md 	{ padding#{$modif}: $base-space-size * 1.333 !important; }
+	.p#{$pos}-lg 	{ padding#{$modif}: $base-space-size * 2.000 !important; }
+	.p#{$pos}-xl	{ padding#{$modif}: $base-space-size * 2.666 !important; }
+	.p#{$pos}-xxl	{ padding#{$modif}: $base-space-size * 4.000 !important; }
+	
+	@each $break, $value in $breakpoints {
+		
+		@include breakpoint($break) {
+			.p#{$pos}-#{$break}-none 	{ padding#{$modif}: 0 !important; }
+			.p#{$pos}-#{$break}-xs 		{ padding#{$modif}: $base-space-size * 0.200 !important; }
+			.p#{$pos}-#{$break}-sm 		{ padding#{$modif}: $base-space-size * 0.666 !important; }
+			.p#{$pos}-#{$break} 		{ padding#{$modif}: $base-space-size * 1.000 !important; }
+			.p#{$pos}-#{$break}-md 		{ padding#{$modif}: $base-space-size * 1.333 !important; }
+			.p#{$pos}-#{$break}-lg 		{ padding#{$modif}: $base-space-size * 2.000 !important; }
+			.p#{$pos}-#{$break}-xl		{ padding#{$modif}: $base-space-size * 2.666 !important; }
+			.p#{$pos}-#{$break}-xxl		{ padding#{$modif}: $base-space-size * 4.000 !important; }
+		}
+
+	}
+}

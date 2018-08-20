@@ -1,0 +1,40 @@
+// Elemento javascript para dectetar resolución (DEPRECATED)
+#media-detect {
+	display: none; width: 0px;
+	@media (min-width: 768px) { width: 768px; }
+	@media (min-width: 992px) { width: 992px; }
+	@media (min-width: 1200px) { width: 1200px; }
+}
+
+
+// Visible or Hidden 
+
+@include visible();
+
+
+// Margins
+
+.margin-none { margin: 0 !important; }
+.padding-none { padding: 0 !important; }
+
+@include margins();
+@include margins('t', '-top');
+@include margins('b', '-bottom');
+@include margins('l', '-left');
+@include margins('r', '-right');
+
+@include paddings();
+@include paddings('t', '-top');
+@include paddings('b', '-bottom');
+@include paddings('l', '-left');
+@include paddings('r', '-right');
+
+.noselect {
+    // Evita que el usuario pueda seleccionar el texto
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
