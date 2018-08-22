@@ -7,6 +7,20 @@
 }
 
 
+// Text
+
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+.text-center {text-align: center;}
+
+.text-uppercase { text-transform: uppercase !important; };
+.text-lowercase { text-transform: lowercase !important; };
+.text-notransform { text-transform: none !important; };
+
+.text-preline {white-space: pre-line;}
+.text-pre {white-space: pre;}
+
+
 // Visible or Hidden 
 
 @include visible();
@@ -140,7 +154,11 @@
 // Clearfix
 // Easily clear floats by adding .clearfix to the parent element.
 .clearfix {
-	@include clearfix();
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
 }
 
 
