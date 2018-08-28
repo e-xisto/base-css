@@ -28,6 +28,7 @@ $button-font-family: $font-family-base;
 
 $button-padding-x: 1em;
 $button-padding-y: 1em / $font-scale-factor;
+$button-height: 42px;
 
 $button-hover-background-color: darken($button-background-color, 7%);
 $button-hover-border-color: $button-hover-background-color;
@@ -51,6 +52,7 @@ $button-focus-color: map-get($grayscale, light);
 	font-size: $button-font-size;
 	font-weight: $button-font-weight;
 	line-height: 1em;
+	height: $button-height;
 	text-align: center;
 	text-decoration: none;
 	white-space: nowrap;	
@@ -101,16 +103,19 @@ $button-focus-color: map-get($grayscale, light);
 	&.btn-sm,
 	&.button-sm {
 		font-size: 1em / $font-scale-factor;
+		height: round($button-height / $font-scale-factor);
 	}
 
 	&.btn-md,
 	&.button-md {
 		font-size: 1em * $font-scale-factor;
+		height: round($button-height * $font-scale-factor);
 	}
 
 	&.btn-lg,
 	&.button-lg {
 		font-size: 1em * $font-scale-factor * $font-scale-factor;
+		height: round($button-height * $font-scale-factor * $font-scale-factor);
 	}
 }
 

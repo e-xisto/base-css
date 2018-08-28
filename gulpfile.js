@@ -30,8 +30,11 @@ gulp.task('default',function() {
 		livereload: true
 	});
 
-	watch(['./src/css/**/*.scss', './dist/*.html'], batch(function (events, done) {
+	watch(['./src/css/**/*.scss'], batch(function (events, done) {
         gulp.start('base', done);
+    }));
+
+	watch(['./dist/*.html'], batch(function (events, done) {
         gulp.start('reload', done);
     }));
 });

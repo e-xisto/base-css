@@ -1,0 +1,105 @@
+$input-background-color: #fff;
+
+$input-border-width: 1px;
+$input-border-radius: 4px;
+$input-border-color: map-get($grayscale, gray);
+
+$input-font-size: 1rem;
+$input-font-weight: normal;
+$input-font-color: map-get($grayscale, dark);
+$input-font-family: $font-family-base;
+
+$input-padding-x: 1em;
+$input-padding-y: 1em / $font-scale-factor;
+$input-line-height: 1em;
+$input-height: 42px;
+
+$input-focus-background-color: lighten(map-get($colors, warning), 35%);
+$input-focus-border-color: $input-focus-background-color;
+$input-focus-font-color: $input-font-color;
+$input-focus-shadow-color: map-get($grayscale, light);
+
+form {
+	&.validated  {}
+}
+
+
+.form-input {
+	width: auto;
+
+	label {}
+
+	input {
+		display: block;
+  		width: 100%;
+  		color: $input-font-color;
+  		font-size: $input-font-size;
+  		height: $input-height;
+  		background-color: $input-background-color;
+  		line-height: 1em;
+  		padding: $input-padding-y $input-padding-x;
+		border-radius: $input-border-radius;
+  		border: $input-border-width solid $input-border-color;		
+  		background-clip: padding-box;
+
+		transition: color .3s ease-in-out,
+					background-color .3s ease-in-out,
+					border-color .3s ease-in-out, 
+					box-shadow .3s ease-in-out;		  
+
+		&:focus {
+			outline: 0px;
+			box-shadow: 0 0 0 3px darken($input-focus-shadow-color, 10%);
+			background-color: $input-focus-background-color;
+			color: $input-focus-font-color;
+			border-color: $input-focus-border-color;
+
+			&:hover:active {
+				box-shadow: none;
+			}
+		}
+	}
+
+	small {}
+
+	.valid {}
+	.invalid {}
+
+	.input-sm {
+		font-size: 1em / $font-scale-factor;
+		height: round($input-height / $font-scale-factor); 
+	}
+
+	.input-md {
+		font-size: 1em * $font-scale-factor;
+		height: round($input-height * $font-scale-factor); 
+	}
+
+	.input-lg {
+		font-size: 1em * $font-scale-factor * $font-scale-factor;
+		height: round($input-height * $font-scale-factor * $font-scale-factor); 
+	}
+
+	// readonly {}
+	
+	.icon {}
+
+	.text {}
+
+	.btn,
+	.button {}
+}
+
+.form-label {}
+
+.form-select {}
+
+.form-textarea {}
+
+.form-check {}
+
+.form-file {}
+
+
+
+
