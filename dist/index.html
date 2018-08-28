@@ -11,31 +11,47 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col pt-xl pr-none">
+			<div class="col pt-xl">
 
 				<div class="form-input">
-					<!-- <label for="test">Test label</label> -->
-					<input type="text" id="test" placeholder="Escribe aquí un texto..." class="input-sm">
+					<label for="test">Test label1</label>
+					<input type="text" id="test" placeholder="Escribe aquí un texto...">
+					<small>Texto ayuda para el usuario</small>
 				</div>
 				<div class="form-input">
-					<!-- <label for="test">Test label</label> -->
-					<input type="text" id="test" placeholder="Escribe aquí un texto..." class="">
+					<label for="test">Test label</label>
+					<div class="input-group">
+						<a href="" class="btn btn-primary1 border-gray">Hola</a>
+						<div class="icons-facebook">
+							<input type="text" id="test" placeholder="Escribe aquí un texto..." class="">
+						</div>
+						<span class="text"><i class="icons-buscar"></i></span>
+					</div>
 				</div>
 				<div class="form-input">
-					<!-- <label for="test">Test label</label> -->
-					<input type="text" id="test" placeholder="Escribe aquí un texto..." class="input-md">
+					<label for="test">Test label</label>
+					<input type="text" id="test" placeholder="readonly" readonly>
 				</div>
-				<div class="form-input">
-					<!-- <label for="test">Test label</label> -->
-					<input type="text" id="test" placeholder="Escribe aquí un texto..." class="input-lg">
+				<div class="form-label">
+					<label for="test">Label label</label>
+					<input type="text" id="test" placeholder="Soy un label" value="sdasd asdasd asd as">
 				</div>
 			</div>
 
-			<div class="col pt-xl pl-none">
-				<a href="" class="btn border-gray btn-sm block">Hola soy un bontón</a>
-				<a href="" class="btn border-gray block">Hola soy un bontón</a>
-				<a href="" class="btn border-gray btn-md block">Hola soy un bontón</a>
-				<a href="" class="btn border-gray btn-lg block">Hola soy un bontón</a>
+			<div class="col-6 pt-xl">
+				<div class="form-select">
+					<select name="" id="">
+						<option value="">Seleccionar opción...</option>
+						<option value="">Seleccionar opción...</option>
+						<option value="">Seleccionar opción...</option>
+						<option value="">Seleccionar opción...</option>
+					</select>
+				</div>
+
+				<div class="form-textarea form-size-lg">
+					<label for=""><i class="icons-facebook"></i>hola</label> 
+					<textarea name="" id="" cols="30" rows="10" disabled>das asdasdasdsa asdas dss</textarea>
+				</div>
 			</div>
 		</div>
 	</div>
