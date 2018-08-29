@@ -140,6 +140,51 @@ form {
 			height: round($input-height * $font-scale-factor * $font-scale-factor); 
 		}
 	}	
+
+	> [class^="icons-"],
+	> [class*=" icons-"] {
+		width: 100%;
+		position: relative;
+		
+		input { padding-left: $base-space-size * 2.5; }
+		
+		&:not(:first-child):not(:last-child) input {
+			border-left: none !important;
+			border-right: none !important;
+			border-radius: 0  !important;
+		}
+
+		&:first-child:last-child input {
+			border-radius: $input-border-radius  !important;
+			border: $input-border-width solid $input-border-color  !important;
+		}
+
+		&:first-child input {
+			border-right: none  !important;
+			border-top-right-radius: 0  !important;
+			border-bottom-right-radius: 0  !important;	
+		}
+
+		&:last-child input {
+			border-left: none  !important;
+			border-top-left-radius: 0  !important;
+			border-bottom-left-radius: 0  !important;	
+		}			
+	}
+
+	> [class^="icons-"]:before,
+	> [class*=" icons-"]:before { 
+		font-size: 1.5em; 
+		left: 8px;
+		margin-left: 0;
+		margin-right: 0;
+		position: absolute;
+		z-index: 300;
+		height: 100%;
+		line-height: $input-height;
+		color: map-get($grayscale, midtone);
+	}	
+
 }
 
 .form-input {
@@ -154,51 +199,6 @@ form {
 	.input-group {
 		display: flex;
 		
-
-		> [class^="icons-"],
-		> [class*=" icons-"] {
-			width: 100%;
-			position: relative;
-			
-			input { padding-left: $base-space-size * 2.5; }
-			
-			&:not(:first-child):not(:last-child) input {
-				border-left: none !important;
-				border-right: none !important;
-				border-radius: 0  !important;
-			}
-
-			&:first-child:last-child input {
-				border-radius: $input-border-radius  !important;
-				border: $input-border-width solid $input-border-color  !important;
-			}
-
-			&:first-child input {
-				border-right: none  !important;
-				border-top-right-radius: 0  !important;
-				border-bottom-right-radius: 0  !important;	
-			}
-
-			&:last-child input {
-				border-left: none  !important;
-				border-top-left-radius: 0  !important;
-				border-bottom-left-radius: 0  !important;	
-			}			
-		}
-
-		> [class^="icons-"]:before,
-		> [class*=" icons-"]:before { 
-			font-size: 1.5em; 
-			left: 8px;
-			margin-left: 0;
-			margin-right: 0;
-			position: absolute;
-			z-index: 300;
-			height: 100%;
-			line-height: $input-height;
-			color: map-get($grayscale, midtone);
-		}	
-
 		input {
 
 			&:not(:first-child):not(:last-child) {
