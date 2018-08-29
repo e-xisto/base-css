@@ -117,6 +117,16 @@ $button-focus-color: map-get($grayscale, light);
 		font-size: 1em * $font-scale-factor * $font-scale-factor;
 		height: round($button-height * $font-scale-factor * $font-scale-factor);
 	}
+
+	&.btn-outline, 
+	&.btn-outlined {
+		@include make-button-variant($button-font-color, transparent, $button-font-color, #fff, $button-font-color, $button-font-color);
+	}
+
+	&.btn-round, 
+	&.btn-rounded {
+		border-radius: 2em;
+	}
 }
 
 // Color Variants
@@ -127,7 +137,18 @@ $button-focus-color: map-get($grayscale, light);
 		&.btn-#{$color} {
 			@include make-button-variant(#fff, $value, $value);
 		}
-	}
 
+		&.btn-outline-#{$color},
+		&.btn-outlined-#{$color} {
+			@include make-button-variant($value, transparent, $value, #fff, $value, $value);
+		}
+
+		&.btn-round-#{$color},
+		&.btn-rounded-#{$color} {
+			border-radius: 2em;
+			@include make-button-variant($value, transparent, $value, #fff, $value, $value);
+		}
+	}
 }
+
 
