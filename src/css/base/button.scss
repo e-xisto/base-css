@@ -127,6 +127,18 @@ $button-focus-color: map-get($grayscale, light);
 	&.btn-rounded {
 		border-radius: 2em;
 	}
+
+	&.btn-block {
+		width: 100%;
+	}
+	
+	@each $break, $value in $breakpoints {
+		&.btn-#{$break}-block {
+			@include breakpoint($break) {
+				width: 100%;
+			}
+		}
+	}	
 }
 
 // Color Variants
