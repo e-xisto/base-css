@@ -40,5 +40,5 @@ gulp.task('default',function() {
 });
 
 // Install:
-// $ npm i -D gulp gulp-sass gulp-clean-css gulp-autoprefixed gulp-connect
+// $ npm i -D gulp gulp-sass gulp-clean-css gulp-autoprefixer gulp-connect
 // $ gulp
