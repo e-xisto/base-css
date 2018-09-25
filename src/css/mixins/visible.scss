@@ -8,7 +8,7 @@
 		.visible-#{$break}-block,
 		.visible-#{$break}-inline,
 		.visible-#{$break}-inline-block {
-			display: none !important;
+			display: none;
 		}
 		
 		@include breakpoint($break) {
