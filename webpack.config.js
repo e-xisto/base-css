@@ -74,6 +74,11 @@ module.exports = {
 			filename: "css/[name].css",
 			chunkFilename: "[id].css"
 		})
-	]
-
+	],
+	resolve: {
+		extensions: [".tsx", ".ts", ".js", ".css", ".scss"],
+		alias: {
+			'@': path.resolve(__dirname, 'src')
+		}
+	}	
 }
