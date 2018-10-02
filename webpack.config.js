@@ -21,7 +21,7 @@ module.exports = {
 		contentBase: path.join(__dirname, 'dist'),
 		compress: false,
 		port: 8888
-	},	
+	},
 
 	module: {
 		rules: [
@@ -47,11 +47,16 @@ module.exports = {
 				}
 			},
 			{
+					test: /\.tsx?$/,
+					loader: 'ts-loader',
+					exclude: /node_modules/,
+			},
+			{
 				test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				use: {
 				loader: 'file-loader',
-            			options: {
-            				name: '[name].[ext]',
+						options: {
+							name: '[name].[ext]',
 							outputPath: 'css/assets/',
 							publicPath: '/css/assets'
 						}
@@ -80,5 +85,5 @@ module.exports = {
 		alias: {
 			'@': path.resolve(__dirname, 'src')
 		}
-	}	
+	}
 }
