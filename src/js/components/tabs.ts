@@ -7,9 +7,24 @@ function init() {
 			event.preventDefault();
 			event.stopPropagation();
 
+			active(item);
 			show(item);
 		}
 	});
+}
+
+function active(tab: Element) {
+
+	if (!tab.classList.contains('active')) {
+		let container = tab.closest('.tabs');
+		if (container) {
+			let allTabs = <HTMLCollectionOf<Element>>container.getElementsByClassName('tabs-item');
+			Array.from(allTabs).forEach((item: Element) => {
+				item.classList.remove('active');
+			});
+		}
+		tab.classList.add('active');
+	}
 }
 
 function show(tab: Element) {
@@ -22,8 +37,8 @@ function show(tab: Element) {
 
 		let container = panel.closest('.tabs-content');
 		if (container) {
-			let allTabs = <HTMLCollectionOf<Element>>container.getElementsByClassName('tabs-panel');
-			Array.from(allTabs).forEach((item: Element) => {
+			let allPanels = <HTMLCollectionOf<Element>>container.getElementsByClassName('tabs-panel');
+			Array.from(allPanels).forEach((item: Element) => {
 				item.classList.remove('show');
 			});
 		}
