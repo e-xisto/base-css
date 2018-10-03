@@ -1,6 +1,8 @@
 
-function init() {
+let activeDropdown: any = {};
 
+
+function init() {
 
 	document.addEventListener('click', (event: Event) => {
 		let item = <Element>event.target;
@@ -8,6 +10,13 @@ function init() {
 			event.preventDefault();
 			event.stopPropagation();
 			toggle(item.closest('.dropdown'), item);
+		} else {
+			if (activeDropdown.container && !item.classList.contains('dropdown-item')) {
+				let menus = <NodeListOf<Element>>activeDropdown.container.getElementsByClassName('dropdown-menu');
+				Array.from(menus).forEach((menu: Element) => {
+					if (menu.classList.contains('show')) hide(activeDropdown.container, activeDropdown.button, menu);
+				});
+			}
 		}
 	});
 
@@ -31,9 +40,11 @@ function show(container: Element, button: Element, menu: Element) {
 	button.classList.add('active');
 	menu.classList.add('show');
 
-	container.setAttribute('tabindex', '-1');
-	(<HTMLElement>container).focus();
-	container.addEventListener('blur', menuBlurEventHandler);
+	activeDropdown.container = container;
+	activeDropdown.button = button;
+	// container.setAttribute('tabindex', '-1');
+	// (<HTMLElement>container).focus();
+	// container.addEventListener('blur', menuBlurEventHandler);
 }
 
 
@@ -42,8 +53,9 @@ function hide(container: Element, button: Element, menu: Element) {
 	button.classList.remove('active');
 	menu.classList.remove('show');
 
-	container.removeAttribute('tabindex');
-	container.removeEventListener('blur', menuBlurEventHandler);
+	activeDropdown = {};
+	// container.removeAttribute('tabindex');
+	// container.removeEventListener('blur', menuBlurEventHandler);
 }
 
 
