@@ -5,37 +5,45 @@ let activeDropdown: any = {};
 function init() {
 
 	document.addEventListener('click', (event: Event) => {
+
 		let item = <Element>event.target;
+
 		if (item.classList.contains('dropdown-toggle')) {
 			event.preventDefault();
 			event.stopPropagation();
-			toggle(item.closest('.dropdown'), item);
+
+			let container = item.closest('.dropdown');
+			if (container) toggle(container, item);
 		} else {
-			if (activeDropdown.container) { // && !item.classList.contains('dropdown-item')) {
-				let menus = <NodeListOf<Element>>activeDropdown.container.getElementsByClassName('dropdown-menu');
-				Array.from(menus).forEach((menu: Element) => {
-					if (menu.classList.contains('show')) hide(activeDropdown.container, activeDropdown.button, menu);
-				});
-			}
+			hideActive();
 		}
 	});
 
 }
 
-
-function toggle(container: Element | null, button: Element) {
-
-	if (container) {
-		let menus = container.getElementsByClassName('dropdown-menu');
-		Array.from(menus).forEach((menu) => {
-			if (menu.classList.contains('show')) hide(container, button, menu);
-			else show(container, button, menu);
+function hideActive() {
+	if (activeDropdown.container) { // && !item.classList.contains('dropdown-item')) {
+		let menus = <NodeListOf<Element>>activeDropdown.container.getElementsByClassName('dropdown-menu');
+		Array.from(menus).forEach((menu: Element) => {
+			hide(activeDropdown.container, activeDropdown.button, menu);
 		});
 	}
 }
 
 
+function toggle(container: Element, button: Element) {
+
+	let menus = container.getElementsByClassName('dropdown-menu');
+	Array.from(menus).forEach((menu) => {
+		if (menu.classList.contains('show')) hide(container, button, menu);
+		else show(container, button, menu);
+	});
+}
+
+
 function show(container: Element, button: Element, menu: Element) {
+
+	hideActive();
 
 	button.classList.add('active');
 	menu.classList.add('show');
