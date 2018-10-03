@@ -1,6 +1,6 @@
 import dropdown from './components/dropdown';
-// import tabs from './components/tabs';
+import tabs from './components/tabs';
 
 
 dropdown.init();
-// tabs.init();
+tabs.init();
