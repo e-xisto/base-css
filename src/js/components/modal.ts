@@ -1,10 +1,10 @@
 
-let modalActive = new Array<Element>();
+let modalActive = new Array<HTMLElement>();
 
 function init() {
 	document.addEventListener('click', (event: Event) => {
 
-		let item = <Element>event.target;
+		let item = <HTMLElement>event.target;
 		let action = item.getAttribute('data-action');
 		let target = item.getAttribute('data-target');
 		if (action == 'modal-open' && target) {
@@ -39,14 +39,21 @@ function show(target: string) {
 	if (element) {
 		element.classList.add('show');
 		element.scrollTop = 0;
-		modalActive.push(element);
+		let index = modalActive.push(element) - 1;
+		if (index > 0) {
+			let zIndex = parseInt(modalActive[index - 1].style.zIndex || '0') + 1000;
+			element.style.zIndex = zIndex.toString();
+		} else {
+			if (!element.style.zIndex) element.style.zIndex = '1000';
+		}
+
 		document.body.classList.add('noscroll');
 	}
 }
 
 function hide(target?: string | null) {
 
-	let element: Element | null | undefined;
+	let element: HTMLElement | null | undefined;
 	if (target) {
 		element = document.getElementById(target);
 		let index;
