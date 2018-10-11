@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<div class="container mt-lg">
+
+		<div class="row">
+			<div class="col-md-6 mb-xxl">
+
+				<div class="tabs">
+					<a href="#uno" class="tabs-item active">Tab Uno</a>
+					<a href="#dos" class="tabs-item">Tab dos</a>
+					<a href="#tres" class="tabs-item">Tab tres</a>
+				</div>
+
+				<div class="tabs-content">
+					<div class="tabs-panel show" id="uno">
+						<h4>Contenido tab uno</h4>
+						<p class="mb-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore consectetur in, ipsum saepe sunt quibusdam, blanditiis quos, expedita amet veniam necessitatibus cumque quia tenetur ratione tempora facere! Vero saepe qui eveniet. Repellat tempore dolor consectetur doloribus beatae accusamus, ab quisquam fugit iure saepe nihil natus earum impedit laudantium quas sint id architecto aliquam velit qui nemo dolore sequi blanditiis. Ut, earum. Adipisci hic id at beatae sunt nisi alias facere voluptates accusantium vero dignissimos quo odio quaerat eligendi modi corporis aperiam mollitia sequi debitis ratione velit praesentium accusamus, dolorum optio? Saepe doloribus et aliquam! Quisquam corrupti distinctio maxime voluptates id.</p>
+					</div>
+					<div class="tabs-panel" id="dos">
+						<h4>Contenido tab dos</h4>
+						<p class="mb-none">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores praesentium quaerat sed repudiandae molestias, beatae aut sapiente dolor expedita ea necessitatibus dicta, at minus sit fugit labore possimus id. Omnis expedita eos architecto quo, animi aut facere accusamus placeat est nihil. Consequuntur dolores ex fugit! Voluptate pariatur sapiente quod deleniti.</p>
+					</div>
+					<div class="tabs-panel" id="tres">
+						<h4>Contenido tab tres</h4>
+						<p class="mb-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eum, deserunt unde soluta error labore aspernatur at ad sunt natus dicta nisi blanditiis aperiam in.</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-md-6">
+				<button onclick="document.getElementById('modal').classList.add('show')" class="btn btn-outlined-secondary btn-md btn-block mt-xxl" data-action="modal-open" data-target="modal">Modal</button>
+
+				<!-- Esquema MODAL -->
+
+				<div class="modal" id="modal">
+
+					<div class="modal-content">
+						<div class="modal-close" data-action="modal-close" data-target="modal">&times;</div>
+						<div class="modal-header">
+							<h3>Título de la modal</h3>
+						</div>
+						<div class="modal-body">
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, dolor magnam? Fugit omnis molestiae necessitatibus eveniet debitis, veritatis laudantium unde cum ullam quod nobis obcaecati, sunt totam recusandae voluptatum laborum reprehenderit dignissimos minus quam ad! Exercitationem hic nobis laborum illo. Dolore ad voluptates illo, perspiciatis maxime iure. Aperiam reiciendis hic quae fugiat sapiente accusantium nesciunt consequatur a? Ratione eveniet deserunt et, commodi quisquam dicta quo sit? Quo voluptate corrupti rerum, nostrum asperiores, quibusdam quae consectetur commodi mollitia aspernatur in cumque, adipisci eligendi laudantium ut. Sed atque cumque excepturi quibusdam quaerat ullam. Eligendi velit, architecto quaerat modi aspernatur dolor tempora nobis?
+						</div>
+						<div class="modal-footer">
+							<a href="" class="btn btn-outlined btn-xs-block btn-sm-block mb-xs-md" data-action="modal-close">Cancelar</a>
+							<a href="" class="btn btn-success btn-xs-block btn-sm-block">Aceptar</a>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col">
+				<a href="" class="btn btn-outline btn-outline-secondary1 btn-rounded1 btn-lg1">Prueba botón</a>
+			</div>
+			<div class="col">
+				<div class="dropdown">
+					<a href="" class="btn dropdown-toggle">Dropdown</a>
+					<div class="dropdown-menu">
+						<a href="javascript:void(0)" class="dropdown-item">Opción 1</a>
+						<a href="" class="dropdown-item">Opción 2</a>
+						<a href="" class="dropdown-item">Opción 3 adasd adasd a ssdasad asasd asd</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a href="" class="btn dropdown-toggle">Dropdown</a>
+					<div class="dropdown-menu">
+						<a href="javascript:void(0)" class="dropdown-item">Opción 1</a>
+						<a href="" class="dropdown-item">Opción 2</a>
+						<a href="" class="dropdown-item">Opción 3 adasd adasd a ssdasad asasd asd</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col pt-xl">
+				<div class="form-input">
+					<label for="test">Test label1</label>
+					<input type="text" id="test" placeholder="Escribe aquí un texto...">
+					<small>Texto ayuda para el usuario</small>
+				</div>
+				<div class="form-input">
+					<label for="test">Test label</label>
+					<div class="input-group">
+						<a href="" class="btn btn-primary1 border-gray">Hola</a>
+						<div class="icons-facebook">
+							<input type="text" id="test" placeholder="Escribe aquí un texto..." class="">
+						</div>
+						<span class="text"><i class="icons-buscar"></i></span>
+					</div>
+				</div>
+				<div class="form-input">
+					<label for="test">Test label</label>
+					<input type="text" id="test" placeholder="readonly" readonly>
+				</div>
+				<div class="form-label">
+					<label for="test">Label label</label>
+					<input type="text" id="test" placeholder="Soy un label" value="sdasd asdasd asd as">
+				</div>
+			</div>
+
+			<div class="col-6 pt-xl">
+				<div class="form-select">
+					<select name="" id="">
+						<option value="">Seleccionar opción...</option>
+						<option value="">Seleccionar opción...</option>
+						<option value="">Seleccionar opción...</option>
+						<option value="">Seleccionar opción...</option>
+					</select>
+				</div>
+
+				<div class="form-textarea form-size-lg">
+					<label for=""><i class="icons-facebook"></i>hola</label>
+					<textarea name="" id="" cols="30" rows="10" disabled>das asdasdasdsa asdas dss</textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
