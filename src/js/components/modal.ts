@@ -32,6 +32,7 @@ function show(target: string) {
 	let element = document.getElementById(target);
 	if (element) {
 		element.classList.add('show');
+		element.scrollTop = 0;
 		modalActive.push(element);
 		document.body.classList.add('noscroll');
 	}
@@ -47,8 +48,8 @@ function hide(target?: string | null) {
 		if (index !== undefined) {
 			modalActive.splice(index, 1);
 		}
-	}
-	else element = modalActive.pop();
+	} else
+		element = modalActive.pop();
 
 	if (element) {
 		element.classList.remove('show');
