@@ -24,17 +24,19 @@ function show(target: string) {
 	let element = document.getElementById(target);
 	if (element) {
 		element.classList.add('show');
+		document.body.classList.add('noscroll');
 	}
 }
 
 function hide(item: Element, target: string | null) {
 
-	if (target) {
-		let element = document.getElementById(target);
-		if (element) element.classList.remove('show');
-	} else {
-		let parent = item.closest('.modal');
-		if (parent) parent.classList.remove('show');
+	let element: Element | HTMLElement | null;
+	if (target) element = document.getElementById(target);
+	else element = item.closest('.modal');
+
+	if (element) {
+		element.classList.remove('show');
+		document.body.classList.remove('noscroll');
 	}
 }
 
