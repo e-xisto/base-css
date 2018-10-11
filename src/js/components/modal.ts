@@ -1,3 +1,6 @@
+
+let modalActive = new Array<Element>();
+
 function init() {
 	document.addEventListener('click', (event: Event) => {
 
@@ -14,25 +17,38 @@ function init() {
 			event.preventDefault();
 			event.stopPropagation();
 
-			hide(item, target);
+			hide(target);
+		}
+	});
+
+	document.addEventListener('keyup', (event: KeyboardEvent) => {
+		if (event.key == 'Escape') {
+			hide();
 		}
 	});
 }
 
 function show(target: string) {
-
 	let element = document.getElementById(target);
 	if (element) {
 		element.classList.add('show');
+		modalActive.push(element);
 		document.body.classList.add('noscroll');
 	}
 }
 
-function hide(item: Element, target: string | null) {
+function hide(target?: string | null) {
 
-	let element: Element | HTMLElement | null;
-	if (target) element = document.getElementById(target);
-	else element = item.closest('.modal');
+	let element: Element | null | undefined;
+	if (target) {
+		element = document.getElementById(target);
+		let index;
+		if (element) index = modalActive.indexOf(element);
+		if (index !== undefined) {
+			modalActive.splice(index, 1);
+		}
+	}
+	else element = modalActive.pop();
 
 	if (element) {
 		element.classList.remove('show');
