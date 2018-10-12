@@ -1,0 +1,11 @@
+{% set vars = htmlWebpackPlugin.options.customData %}
+
+<html>
+	<head>
+		<title>{{ vars.title }}</title>
+	</head>
+	<body>
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

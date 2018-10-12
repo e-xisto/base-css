@@ -1,7 +1,10 @@
 const path = require('path');
+
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
+const templatesHtmlPlugin = require("./src/html/templates");
 
 module.exports = {
 
@@ -18,8 +21,9 @@ module.exports = {
 	},
 
 	devServer: {
-		contentBase: path.join(__dirname, 'dist'),
+		contentBase: path.resolve(__dirname, './dist'),
 		compress: false,
+		// hot: true,
 		port: 8888
 	},
 
@@ -34,6 +38,7 @@ module.exports = {
 					"sass-loader" // compiles Sass to CSS, using Node Sass by default
 				]
 			},
+
 			{
 				test: /\.(gif|png|jpe?g|svg)$/i,
 				use: {
@@ -46,24 +51,39 @@ module.exports = {
 					}
 				}
 			},
+
 			{
-					test: /\.tsx?$/,
-					loader: 'ts-loader',
-					exclude: /node_modules/,
+				test: /\.(njk|nunjucks|html|tpl|tmpl)$/,
+				use: [
+					{
+						loader: 'nunjucks-isomorphic-loader',
+						query: {
+							root: [path.resolve(__dirname, 'src/html')]
+						}
+					}
+				]
 			},
+
+			{
+				test: /\.tsx?$/,
+				loader: 'ts-loader',
+				exclude: /node_modules/,
+			},
+
 			{
 				test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				use: {
-				loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							outputPath: 'css/assets/',
-							publicPath: '/css/assets'
-						}
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]',
+						outputPath: 'css/assets/',
+						publicPath: '/css/assets'
+					}
 				}
 			}
 		]
 	},
+
 	optimization: {
 		minimizer: [
 			new UglifyJsPlugin({
@@ -74,12 +94,14 @@ module.exports = {
 			new OptimizeCSSAssetsPlugin({})
 		]
 	},
+
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: "css/[name].css",
 			chunkFilename: "[id].css"
 		})
-	],
+	].concat(templatesHtmlPlugin),
+
 	resolve: {
 		extensions: [".tsx", ".ts", ".js", ".css", ".scss"],
 		alias: {
