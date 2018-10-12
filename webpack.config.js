@@ -3,21 +3,8 @@ const path = require('path');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-
-const templates = [
-	'index',
-	'guia'
-];
-
-const templatesHtmlPlugin = templates.map ( (template) => {
-	return new HtmlWebpackPlugin({
-		filename: __dirname + `/dist/${template}.html`,
-		template: __dirname + `/src/html/${template}.html`
-	})
-});
-
+const templatesHtmlPlugin = require("./src/html/templates");
 
 module.exports = {
 
@@ -34,7 +21,7 @@ module.exports = {
 	},
 
 	devServer: {
-		contentBase: path.join(__dirname, 'dist'),
+		contentBase: path.resolve(__dirname, './dist'),
 		compress: false,
 		// hot: true,
 		port: 8888
@@ -66,8 +53,15 @@ module.exports = {
 			},
 
 			{
-				test: /\.html$/,
-				loader: 'html-loader?interpolate'
+				test: /\.(njk|nunjucks|html|tpl|tmpl)$/,
+				use: [
+					{
+						loader: 'nunjucks-isomorphic-loader',
+						query: {
+							root: [path.resolve(__dirname, 'src/html')]
+						}
+					}
+				]
 			},
 
 			{
