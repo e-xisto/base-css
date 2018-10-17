@@ -6,7 +6,56 @@
 	<title>Page Title</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body class="offcanvas-wrap">
+
+<div class="offcanvas offcanvas-slide-left" id="box">
+<!-- <div class="offcanvas offcanvas-slide-right | push | slide | top | down | left | right" id="canvas"> -->
+	<a onclick="document.getElementById('box').classList.toggle('show')" class="offcanvas-toggle btn btn-rounded-success btn-block mt-lg" data-action="offcanvas" data-target="box">cerrar</a>
+	<ul>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+	</ul>
+
+</div>
+
+<div class="offcanvas offcanvas-push-right" id="box1">
+<!-- <div class="offcanvas offcanvas-slide-right | push | slide | top | down | left | right" id="canvas"> -->
+	<a onclick="document.getElementById('box1').classList.toggle('show');document.getElementsByTagName('body')[0].classList.toggle('show');" class="offcanvas-toggle btn btn-rounded-success btn-block mt-lg" data-action="offcanvas" data-target="box">cerrar</a>
+	<ul>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+		<li>Contenido canvas</li>
+	</ul>
+
+</div>
+
+
+
 
 	<div class="container mt-lg">
 
@@ -39,7 +88,8 @@
 				<a onclick="console.log('onclick1')" class="btn btn-outlined-secondary btn-md btn-block mt-xxl" data-action="modal-open" data-target="modal">Modal</a>
 				<button class="btn btn-outlined-secondary btn-md btn-block mt-xxl" data-action="modal-open" data-target="modal2">Modal noclick velo</button>
 
-
+				<a onclick="document.getElementById('box').classList.toggle('show')" class="offcanvas-toggle btn btn-success btn-lg btn-block mt-lg" data-action="offcanvas" data-target="box">Offcanvas slide</a>
+				<a onclick="document.getElementById('box1').classList.toggle('show');document.getElementsByTagName('body')[0].classList.toggle('show');document.getElementsByTagName('body')[0].classList.toggle('noscroll');" class="offcanvas-toggle btn btn-success btn-lg btn-block mt-lg" data-action="offcanvas" data-target="box1">Offcanvas push</a>
 
 				<div class="modal" id="modal">
 
@@ -156,5 +206,9 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
 </body>
 </html>

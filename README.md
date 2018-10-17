@@ -32,7 +32,7 @@
 | media.scss       | Estilo media object                                          |
 | tile.scss        | Mirar bulma.io (https://bulma.io/documentation/layout/tiles/) |
 | **flex.scss**   | Comportamiento flex https://tailwindcss.com/docs/flexbox-display |
-| offcanvas.scss   | https://imperavi.com/kube/docs/offcanvas/                    |
+| **offcanvas.scss** | https://imperavi.com/kube/docs/offcanvas/                    |
 | **embed.scss**   |                                                              |
 | nav.scss         | Elementos de navegación                                      |
 | **fonts.scss**   | Tipografías (https://fontpair.co )                           |
