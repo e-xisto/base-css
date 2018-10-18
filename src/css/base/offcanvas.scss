@@ -1,5 +1,5 @@
 $offcanvas-width: 300px;
-$offcanvas-height: 30%;
+$offcanvas-height: 300px;
 
 .offcanvas {
 	position: fixed;
@@ -92,10 +92,10 @@ $offcanvas-height: 30%;
 	transition-duration: .4s;
 	transition-timing-function: ease-in-out;
 
-	&.offcanvas-wrap-right { transform: translateX(-$offcanvas-width); }
-	&.offcanvas-wrap-left { transform: translateX($offcanvas-width); }
-	&.offcanvas-wrap-top { transform: translateY($offcanvas-width); }
-	&.offcanvas-wrap-bottom { transform: translateY(-$offcanvas-width); }
+	// &.offcanvas-wrap-right { transform: translateX(-$offcanvas-width); }
+	// &.offcanvas-wrap-left { transform: translateX($offcanvas-width); }
+	// &.offcanvas-wrap-top { transform: translateY($offcanvas-height); }
+	// &.offcanvas-wrap-bottom { transform: translateY(-$offcanvas-height); }
 }
 
 .offcanvas-backdrop {
