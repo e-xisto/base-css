@@ -18,22 +18,34 @@ function init() {
 
 function toggle(id: string | null, button: Element) {
 
-	if (id) {
-		let offcanvas = document.getElementById(id);
-		if (!offcanvas) return;
-		offcanvas.classList.toggle('show');
-		offcanvas.classList.forEach((clase: string) => {
+	if (!id) return;
+	let offcanvas = <HTMLElement>document.getElementById(id);
+	if (!offcanvas) return;
 
-			if (clase.startsWith('offcanvas-push-')) {
-				let wrap = document.getElementsByClassName('offcanvas-wrap')[0];
+	let shown = offcanvas.classList.toggle('show');
+	offcanvas.classList.forEach((clase: string) => {
+
+		if (clase.startsWith('offcanvas-push-')) {
+
+			let wrap = <HTMLElement>document.getElementsByClassName('offcanvas-wrap')[0];
+			if (wrap) {
+				let transform = '';
+				if (shown) {
+					if (clase.endsWith('-right')) transform = `translateX(-${offcanvas.offsetWidth}px)`;
+					if (clase.endsWith('-left')) transform = `translateX(${offcanvas.offsetWidth}px)`;
+					if (clase.endsWith('-top')) transform = `translateY(${offcanvas.offsetHeight}px)`;
+					if (clase.endsWith('-bottom')) transform = `translateY(-${offcanvas.offsetHeight}px)`;
+				}
+				wrap.style.transform = transform;
+
 				wrap.classList.toggle(clase.replace('push', 'wrap'));
 				if (wrap.classList.contains('offcanvas-wrap-noscroll')) {
 					backdrop();
 				}
 				return;
 			}
-		});
-	}
+		}
+	});
 }
 
 function backdrop() {

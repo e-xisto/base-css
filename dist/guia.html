@@ -33,9 +33,9 @@
 
 </div>
 
-<div class="offcanvas offcanvas-push-right" id="box1">
+<div class="offcanvas offcanvas-push-top" id="box1">
 <!-- <div class="offcanvas offcanvas-slide-right | push | slide | top | down | left | right" id="canvas"> -->
-	<a onclick="canvas_push()" class="offcanvas-toggle btn btn-rounded-success btn-block mt-lg" data-action="offcanvas" data-target="box">cerrar</a>
+	<a onclick="canvas_push()" class="offcanvas-toggle btn btn-rounded-success btn-block mt-lg" data-action="offcanvas" data-target="box1">cerrar</a>
 	<h3 class="text-primary">Soy canvas push</h3>
 	<ul>
 		<li>Contenido canvas</li>
@@ -59,19 +59,19 @@
 
 <script>
 	function canvas_slide() {
-		document.getElementById('box').classList.toggle('show');
+		// document.getElementById('box').classList.toggle('show');
 		// Incluir el noscroll como opcional
 		// document.getElementsByTagName('body')[0].classList.toggle('noscroll');
 	}
-	
+
 	function canvas_push() {
-		document.getElementById('box1').classList.toggle('show');
-		document.getElementsByClassName('offcanvas-wrap')[0].classList.toggle('offcanvas-wrap-right');
-		// Incluir el noscroll como opcional y esta capa si offcanvas-wrap-noscroll
-		let elem = document.createElement('div');
-		elem.classList.add('offcanvas-backdrop');
-		document.body.appendChild(elem);
-		document.getElementsByTagName('body')[0].classList.toggle('noscroll');
+		// document.getElementById('box1').classList.toggle('show');
+		// document.getElementsByClassName('offcanvas-wrap')[0].classList.toggle('offcanvas-wrap-right');
+		// // Incluir el noscroll como opcional y esta capa si offcanvas-wrap-noscroll
+		// let elem = document.createElement('div');
+		// elem.classList.add('offcanvas-backdrop');
+		// document.body.appendChild(elem);
+		// document.getElementsByTagName('body')[0].classList.toggle('noscroll');
 	}
 </script>
 
@@ -108,7 +108,7 @@
 				<a onclick="console.log('onclick1')" class="btn btn-outlined-secondary btn-md btn-block mt-xxl" data-action="modal-open" data-target="modal">Modal</a>
 				<button class="btn btn-outlined-secondary btn-md btn-block mt-xxl" data-action="modal-open" data-target="modal2">Modal noclick velo</button>
 
-				<a onclick="canvas_slide()" class="offcanvas-toggle btn btn-success btn-lg btn-block mt-lg" data-action="offcanvas" data-target="box">Offcanvas slide</a>
+				<a onclick="" class="offcanvas-toggle btn btn-success btn-lg btn-block mt-lg" data-action="offcanvas" data-target="box">Offcanvas slide</a>
 				<a onclick="canvas_push()" class="offcanvas-toggle btn btn-success btn-lg btn-block mt-lg" data-action="offcanvas" data-target="box1">Offcanvas push</a>
 
 				<div class="modal" id="modal">
@@ -148,7 +148,7 @@
 					</div>
 
 				</div>
-				
+
 
 
 
