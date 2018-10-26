@@ -3,13 +3,16 @@ function init() {
 
 	document.addEventListener('click', (event: Event) => {
 
-		let item = <Element>event.target;
+		let item = <HTMLElement | null>event.target;
 
-		if (item.getAttribute('data-action') == 'offcanvas') {
-			event.preventDefault();
-			event.stopPropagation();
+		while (item) {
+			if (item.getAttribute('data-action') == 'offcanvas') {
+				event.preventDefault();
 
-			toggle(item.getAttribute('data-target'), item);
+				toggle(item.getAttribute('data-target'), item);
+				break;
+			} else
+				item = item.parentElement;
 		}
 	});
 

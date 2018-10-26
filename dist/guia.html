@@ -32,7 +32,7 @@
 	<a class="offcanvas-toggle btn btn-rounded-success btn-block mt-lg" data-action="offcanvas" data-target="box">cerrar</a>
 </div>
 
-<div class="offcanvas offcanvas-push-right" id="box1">
+<div class="offcanvas offcanvas-push-right offcanvas-noscroll" id="box1">
 <!-- <div class="offcanvas offcanvas-slide-right | push | slide | top | down | left | right" id="canvas"> -->
 	<a onclick="canvas_push()" class="offcanvas-toggle btn btn-rounded-success btn-block mt-lg" data-action="offcanvas" data-target="box1">cerrar</a>
 	<h3 class="text-primary">Soy canvas push</h3>
@@ -109,6 +109,9 @@
 
 				<a onclick="" class="offcanvas-toggle btn btn-success btn-lg btn-block mt-lg" data-action="offcanvas" data-target="box">Offcanvas slide</a>
 				<a onclick="canvas_push()" class="offcanvas-toggle btn btn-success btn-lg btn-block mt-lg" data-action="offcanvas" data-target="box1">Offcanvas push</a>
+				<div class="offcanvas-toggle" data-action="offcanvas" data-target="box1">
+					<span>hola</span>
+				</div>
 
 				<div class="modal" id="modal">
 
@@ -129,7 +132,7 @@
 				</div>
 
 				<!-- Esquema MODAL -->
-				<div class="modal noclick" id="modal2">
+				<div class="modal modal-noclick" id="modal2">
 
 					<div class="modal-content">
 						<div class="modal-close" data-action="modal-close" data-target="modal2">&times;</div>
