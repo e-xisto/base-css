@@ -3,16 +3,18 @@ function init() {
 
 	document.addEventListener('click', (event: Event) => {
 
-		let item = <HTMLElement | null>event.target;
+		let item = <Element>event.target;
 
-		while (item) {
-			if (item.getAttribute('data-action') == 'offcanvas') {
+		if (item.getAttribute('data-action') == 'offcanvas') {
+			event.preventDefault();
+
+			toggle(item.getAttribute('data-target'), item);
+		} else {
+			let parent = item.closest('[data-action]');
+			if (parent) {
 				event.preventDefault();
-
-				toggle(item.getAttribute('data-target'), item);
-				break;
-			} else
-				item = item.parentElement;
+				toggle(parent.getAttribute('data-target'), parent);
+			}
 		}
 	});
 
@@ -26,6 +28,16 @@ function toggle(id: string | null, button: Element) {
 	if (!offcanvas) return;
 
 	let shown = offcanvas.classList.toggle('show');
+
+	let actions = document.querySelectorAll(`[data-action="offcanvas"][data-target="${id}"]`);
+	actions.forEach((e: Element) => {
+		e.classList.toggle('active');
+	});
+
+	if (offcanvas.classList.contains('offcanvas-noscroll')) {
+		document.body.classList.toggle('noscroll', shown);
+	}
+
 	offcanvas.classList.forEach((clase: string) => {
 
 		if (clase.startsWith('offcanvas-push-')) {
@@ -41,9 +53,9 @@ function toggle(id: string | null, button: Element) {
 				}
 				wrap.style.transform = transform;
 
-				wrap.classList.toggle(clase.replace('push', 'wrap'));
+				wrap.classList.toggle(clase.replace('push', 'wrap'), shown);
 				if (wrap.classList.contains('offcanvas-wrap-noscroll')) {
-					backdrop();
+					backdrop(shown);
 				}
 				return;
 			}
@@ -51,7 +63,7 @@ function toggle(id: string | null, button: Element) {
 	});
 }
 
-function backdrop() {
+function backdrop(shown: boolean) {
 	let velos = document.getElementsByClassName('offcanvas-backdrop');
 	if (velos.length) {
 		document.body.removeChild(velos[0]);
@@ -60,7 +72,7 @@ function backdrop() {
 		elem.classList.add('offcanvas-backdrop');
 		document.body.appendChild(elem);
 	}
-	document.body.classList.toggle('noscroll');
+	document.body.classList.toggle('noscroll', shown);
 }
 
 
