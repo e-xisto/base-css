@@ -40,16 +40,24 @@ $offcanvas-zindex: 999;
 		right: 0;
 		left: auto;
 		transform: translateX(100%);
+		visibility: hidden;
 
-		&.show { transform: translateX(0); }
+		&.show { 
+			transform: translateX(0);
+			visibility: visible;
+		}
 	}
 
 	&.offcanvas-slide-left,
 	&.offcanvas-push-left {
 		max-width: 100%;
 		transform: translateX(-100%);
+		visibility: hidden;
 
-		&.show { transform: translateX(0); }
+		&.show {
+			transform: translateX(0);
+			visibility: visible;
+		}
 	}
 
 	&.offcanvas-slide-top,
@@ -60,9 +68,11 @@ $offcanvas-zindex: 999;
 		bottom: auto;
 		left: auto;
 		transform: translateY(-100%);
+		visibility: hidden;
 
 		&.show {
 			transform: translateY(0);
+			visibility: visible;
 		}
 	}
 
@@ -75,8 +85,12 @@ $offcanvas-zindex: 999;
 		top: auto;
 		left: auto;
 		transform: translateY(100%);
+		visibility: hidden;
 
-		&.show { transform: translateY(0); }
+		&.show {
+			transform: translateY(0);
+			visibility: visible;
+		}
 	}
 }
 

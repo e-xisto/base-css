@@ -54,22 +54,26 @@ function toggle(id: string | null, button: Element) {
 				wrap.style.transform = transform;
 
 				wrap.classList.toggle(clase.replace('push', 'wrap'), shown);
-				if (wrap.classList.contains('offcanvas-wrap-noscroll')) {
-					backdrop(shown);
-				}
+				backdrop(shown, id, offcanvas);
 				return;
 			}
 		}
 	});
 }
 
-function backdrop(shown: boolean) {
+function backdrop(shown: boolean, target: string, offcanvas: HTMLElement) {
 	let velos = document.getElementsByClassName('offcanvas-backdrop');
 	if (velos.length) {
 		document.body.removeChild(velos[0]);
 	} else {
 		let elem = document.createElement('div');
 		elem.classList.add('offcanvas-backdrop');
+
+		if (!offcanvas.classList.contains('offcanvas-noclick')) {
+			elem.setAttribute('data-action', 'offcanvas');
+			elem.setAttribute('data-target', target);
+		}
+		
 		document.body.appendChild(elem);
 	}
 	document.body.classList.toggle('noscroll', shown);
