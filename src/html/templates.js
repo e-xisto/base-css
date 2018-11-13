@@ -2,6 +2,20 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const templates = [
 	'index',
+	'colores',
+	'tipografias',
+	'contenidos',
+	'iconos',
+	'grid',
+	'botones',
+	'formularios',
+	'modal',
+	'dropdown',
+	'tabs',
+	'offcanvas',
+	'embed',
+	'flex',
+	'utilidades',
 	'guia'
 ];
 
