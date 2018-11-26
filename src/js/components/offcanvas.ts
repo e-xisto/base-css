@@ -11,7 +11,7 @@ function init() {
 			toggle(item.getAttribute('data-target'), item);
 		} else {
 			let parent = item.closest('[data-action]');
-			if (parent) {
+			if (parent && parent.getAttribute('data-action') == 'offcanvas') {
 				event.preventDefault();
 				toggle(parent.getAttribute('data-target'), parent);
 			}

@@ -20,7 +20,7 @@ function init() {
 			hide(target);
 		}
 
-		if (item.classList.contains('modal') && item.classList.contains('show') && !item.classList.contains('noclick')) {
+		if (item.classList.contains('modal') && item.classList.contains('show') && !item.classList.contains('modal-noclick')) {
 			event.preventDefault();
 			event.stopPropagation();
 			hide();
