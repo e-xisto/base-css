@@ -8,13 +8,13 @@
 // https://fontawesome.com/
 
 @font-face {
-  font-family: 'icons';
-  src: url('base/assets/icons.eot?65807929');
-  src: url('base/assets/icons.eot?65807929#iefix') format('embedded-opentype'),
-       url('base/assets/icons.woff2?65807929') format('woff2'),
-       url('base/assets/icons.woff?65807929') format('woff'),
-       url('base/assets/icons.ttf?65807929') format('truetype'),
-       url('base/assets/icons.svg?65807929#icons') format('svg');
+  font-family: 'base';
+  src: url('base/assets/base.eot?95203423');
+  src: url('base/assets/base.eot?95203423#iefix') format('embedded-opentype'),
+       url('base/assets/base.woff2?95203423') format('woff2'),
+       url('base/assets/base.woff?95203423') format('woff'),
+       url('base/assets/base.ttf?95203423') format('truetype'),
+       url('base/assets/base.svg?95203423#base') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,14 +23,14 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'icons';
-    src: url('../font/icons.svg?65807929#icons') format('svg');
+    font-family: 'base';
+    src: url('../font/base.svg?95203423#base') format('svg');
   }
 }
 */
  
- [class^="icons-"]:before, [class*=" icons-"]:before {
-  font-family: "icons";
+ [class^="iconbase-"]:before, [class*=" iconbase-"]:before {
+  font-family: "base";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -64,8 +64,8 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icons-buscar:before { content: '\e800'; } /* '' */
-.icons-facebook:before { content: '\e801'; } /* '' */
-.icons-telefono:before { content: '\e802'; } /* '' */
-.icons-twitter:before { content: '\e803'; } /* '' */
-.icons-youtube:before { content: '\e804'; } /* '' */
+.iconbase-check:before { content: '\e800'; } /* '' */
+.iconbase-down:before { content: '\e801'; } /* '' */
+.iconbase-caret:before { content: '\e802'; } /* '' */
+.iconbase-select:before { content: '\f107'; } /* '' */
+.iconbase-radio:before { content: '\f111'; } /* '' */

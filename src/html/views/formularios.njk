@@ -12,12 +12,12 @@
 					<input type="text" id="test" placeholder="Escribe aquí un texto...">
 					<small>Texto ayuda para el usuario</small>
 				</div>
-				<div class="form-input disabled">
+				<div class="form-input">
 					<label for="test">Readonly input</label>
 					<input type="text" id="test" value="Lorem ipsum dolor sit amet" readonly>
 					<small>Texto ayuda para el usuario</small>
 				</div>				
-				<div class="form-input disabled">
+				<div class="form-input">
 					<label for="test">Disabled input</label>
 					<input type="text" id="test" placeholder="Escribe aquí un texto..." disabled>
 					<small>Texto ayuda para el usuario</small>
@@ -27,11 +27,6 @@
 			<div class="col-md-6">
 				<div class="form-input form-sm">
 					<label for="test">Demo input size sm</label>
-					<input type="text" id="test" placeholder="Escribe aquí un texto...">
-					<small>Texto ayuda para el usuario</small>
-				</div>
-				<div class="form-input form-md">
-					<label for="test">Demo input size md</label>
 					<input type="text" id="test" placeholder="Escribe aquí un texto...">
 					<small>Texto ayuda para el usuario</small>
 				</div>
@@ -116,15 +111,7 @@
 						<input type="text" id="test" placeholder="Escribe aquí un texto..." class="">
 						<span class="text"><i class="icons-buscar"></i></span>
 					</div>
-				</div>			
-				<div class="form-input form-md">
-					<label for="test">Demo input-group (btn+input+text)</label>
-					<div class="input-group">
-						<a href="" class="btn btn-primary1 border-gray">Button</a>
-						<input type="text" id="test" placeholder="Escribe aquí un texto..." class="">
-						<span class="text"><i class="icons-buscar"></i></span>
-					</div>
-				</div>			
+				</div>					
 				<div class="form-input form-lg">
 					<label for="test">Demo input-group (btn+input+text)</label>
 					<div class="input-group">
@@ -171,16 +158,6 @@
 					</select>
 					<small>Texto ayuda para el usuario</small>
 				</div>
-				<div class="form-select form-md">
-					<label for="test">Demo select size md</label>
-					<select name="" id="">
-						<option value="">Seleccionar opción...</option>
-						<option value="">Seleccionar opción...</option>
-						<option value="">Seleccionar opción...</option>
-						<option value="">Seleccionar opción...</option>
-					</select>
-					<small>Texto ayuda para el usuario</small>
-				</div>
 				<div class="form-select form-lg">
 					<label for="test">Demo select size lg</label>
 					<select name="" id="">
@@ -211,10 +188,6 @@
 					<input type="checkbox" name="demo-check-sm" id="demo-check-sm">
 					<label for="demo-check-sm">Demo normal checkbox</label>
 				</div>
-				<div class="form-check form-md">
-					<input type="checkbox" name="demo-check-md" id="demo-check-md">
-					<label for="demo-check-md">Demo disabled checkbox</label>
-				</div>
 				<div class="form-check form-lg">
 					<input type="checkbox" name="demo-check-lg" id="demo-check-lg">
 					<label for="demo-check-lg">Demo disabled checkbox</label>
@@ -243,10 +216,6 @@
 					<input type="radio" name="demo-radio-size" id="demo-radio-sm">
 					<label for="demo-radio-sm">Demo normal radio</label>
 				</div>
-				<div class="form-radio form-md">
-					<input type="radio" name="demo-radio-size" id="demo-radio-md">
-					<label for="demo-radio-md">Demo disabled radio</label>
-				</div>
 				<div class="form-radio form-lg">
 					<input type="radio" name="demo-radio-size" id="demo-radio-lg">
 					<label for="demo-radio-lg">Demo disabled radio</label>
@@ -270,10 +239,6 @@
 				<div class="form-switch form-sm">
 					<input type="checkbox" name="demo-switch-sm" id="demo-switch-sm">
 					<label for="demo-switch-sm">Demo normal switch</label>
-				</div>
-				<div class="form-switch form-md">
-					<input type="checkbox" name="demo-switch-md" id="demo-switch-md">
-					<label for="demo-switch-md">Demo disabled switch</label>
 				</div>
 				<div class="form-switch form-lg">
 					<input type="checkbox" name="demo-switch-lg" id="demo-switch-lg">
@@ -300,18 +265,59 @@
 			</div>
 		</div>
 
+		<form action="" class="was-validated">
+			<div class="row">
+				<div class="col-md-12"><h3 class="mt-xl">Form Validate</h3></div>
+				<div class="col-md-6">
+					<div class="form-input">
+						<label for="test1">Demo input</label>
+						<input type="email" id="test1" value="info@existo.es" >
+						<span class="valid-feedback">Correcto!!</span>
+						<span class="invalid-feedback">Introducir dirección de email</span>
+					</div>
+					<div class="form-select">
+						<label for="test">Demo select</label>
+						<select name="" id="" required>
+							<option value="">Seleccionar opción...</option>
+							<option value="">Seleccionar opción...</option>
+							<option value="">Seleccionar opción...</option>
+							<option value="">Seleccionar opción...</option>
+						</select>
+						<span class="valid-feedback">Correcto!!</span>
+						<span class="invalid-feedback">Debe elegir una opción</span>
+					</div>					
+				</div>
+				<div class="col-md-6">
+					<div class="form-input">
+						<label for="test">Demo input-group (btn+input+btn+text)</label>
+						<div class="input-group">
+							<a href="" class="btn btn-primary1 border-gray"><i class="icons-buscar"></i> Button</a>
+							<input type="number" id="test" placeholder="Escribe aquí un texto..." required>
+							<a href="" class="btn btn-primary1 border-gray">Button</a>
+							<span class="text"><i class="icons-buscar"></i></span>
+						</div>
+						<span class="valid-feedback">Correcto!!</span>
+						<span class="invalid-feedback">Debe introducir un número</span>
+					</div>	
+					<div class="form-check">
+						<input type="checkbox" name="demo-check1" id="demo-check1" required>
+						<label for="demo-check1">Demo normal checkbox</label>
+						<span class="valid-feedback">Correcto!!</span>
+						<span class="invalid-feedback">Debe aceptar el check</span>
+					</div>					
+				</div>
+			</div>
+		</form>
+
 		<div class="row">
 			<div class="col-md-12"><h3 class="mt-xl">File</h3></div>
 			<div class="col-md-6">
 				<div class="form-file">
-
+					<label for="form-file">Selecciona un archivo:</label>
+					<input type="file" name="form-file" id="form-file">
 				</div>
 			</div>
 		</div>
-
-
-
-
 	</div>
 
 

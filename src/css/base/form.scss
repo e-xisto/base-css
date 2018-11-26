@@ -223,8 +223,8 @@ form.was-validated {
 		}		
 	}
 
-	&.form-md,
-	&.form-size-md {
+	&.form-lg,
+	&.form-size-lg {
 
 		input,
 		select {		
@@ -232,15 +232,7 @@ form.was-validated {
 			height: round($input-height * $font-scale-factor); 
 		}
 	}
-
-	&.form-lg,
-	&.form-size-lg {
-		input,
-		select {		
-			font-size: 1em * $font-scale-factor * $font-scale-factor;
-			height: round($input-height * $font-scale-factor * $font-scale-factor); 
-		}
-	}	
+	
 
 	> [class^="icons-"],
 	> [class*=" icons-"] {
@@ -408,8 +400,8 @@ form.was-validated {
 		}
 	}
 
-	&.form-md .input-group,
-	&.form-size-md .input-group {
+	&.form-lg .input-group,
+	&.form-size-lg .input-group {
 
 		.text {
 			font-size: 1em * $font-scale-factor;
@@ -423,23 +415,6 @@ form.was-validated {
 			height: round($input-height * $font-scale-factor); 	
 			line-height: 1;
 		}
-	}
-
-	&.form-lg .input-group,
-	&.form-size-lg .input-group {
-
-		.text {
-			font-size: 1em * $font-scale-factor * $font-scale-factor;
-			height: round($input-height * $font-scale-factor * $font-scale-factor); 	
-			line-height: round($input-height * $font-scale-factor * $font-scale-factor) ;
-		}
-
-		.btn,
-		.button {
-			font-size: 1em * $font-scale-factor * $font-scale-factor;
-			height: round($input-height * $font-scale-factor * $font-scale-factor); 	
-			line-height: 1;
-		}
 	}		
 }
 
@@ -447,6 +422,8 @@ form.was-validated {
 .form-select {
 
 	select {
+		position: relative;
+
 		// Error con alto línea en Firefox
 		padding: 0 $input-padding-x;
 
@@ -457,8 +434,10 @@ form.was-validated {
 
 		// Caret personalizado
 		padding-right: 35px !important;
-		background: #fff url(/imagenes/icon-select.svg) no-repeat;
+		background: #fff url('data:image/svg+xml;utf8,<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="select" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="angle-arrow-down" transform="translate(0.000000, 5.000000)" fill="#000000"><path d="M23.7542737,1.47461053 L22.5522526,0.272673684 C22.3920842,0.112168421 22.2075789,0.0321684211 21.9989895,0.0321684211 C21.7909053,0.0321684211 21.6064842,0.112168421 21.4463158,0.272673684 L11.9971368,9.72134737 L2.54837895,0.272926316 C2.38812632,0.112421053 2.20370526,0.0324210526 1.99536842,0.0324210526 C1.78694737,0.0324210526 1.60252632,0.112421053 1.44235789,0.272926316 L0.240505263,1.47494737 C0.08,1.63511579 0,1.81953684 0,2.02795789 C0,2.23621053 0.0802526316,2.42063158 0.240505263,2.5808 L11.4441263,13.7846737 C11.6042947,13.9449263 11.7888,14.0250105 11.9971368,14.0250105 C12.2054737,14.0250105 12.3896421,13.9449263 12.5497263,13.7846737 L23.7542737,2.5808 C23.9144421,2.42054737 23.9940211,2.23612632 23.9940211,2.02795789 C23.9940211,1.81953684 23.9144421,1.63511579 23.7542737,1.47461053 Z" id="Path"></path></g></g></svg>');
+		background-repeat: no-repeat;
 		background-position: right 10px center;
+		background-size: 15px;
 
 		// Eliminar la línea de puntos en firefox
 		&:-moz-focusring {
@@ -513,8 +492,8 @@ form.was-validated {
         &:after {
             position: absolute;
 			font-size: 12px;
-            font-family: 'Glyphicons Halflings';
-		content: "\e013";
+			font-family: "base";
+			content: "\e800";
             color: $color-primary;
             top: 0px;
             left: 0px;
@@ -522,7 +501,7 @@ form.was-validated {
             height: 20px;
             text-align: center;
             opacity: 0;
-		transform: translateX(-30%);
+			transform: translateX(-30%);
             transition: 0.2s;
         }
 
@@ -537,16 +516,18 @@ form.was-validated {
             height: 20px;
             background: #fff;
 			border: 1px solid $color-gray;
-		border-radius: 2px;
+			border-radius: 2px;
             margin: 0;
         }
     }
 
 	input[type=radio] + label {
 		 &:after {
-			content: "\e013";
-            top: 0px;
-            left: 0px;
+			font-size: 11px;
+			font-family: "base";
+			content: "\f111";
+            top: 1px;
+            left: 1px;
 			transform: translateX(0);
         }
 
@@ -665,6 +646,49 @@ form.was-validated {
 
         &:before {background: $color-success;}
     }
+
+
+	&.form-sm,
+	&.form-size-sm {
+
+		label {
+			font-size: 1em / $font-scale-factor;
+        	line-height: 15px;
+        	padding-left: 50px;
+
+			&:after {
+				position: absolute;
+				content: '';
+				top: 1px;
+				left: 2px;
+				width: 16px;
+				height: 16px;
+				background: #fff;
+				border-radius: 90px;
+				transition: 0.2s;
+				background: #fff;
+				opacity: 1;
+				transform: translateX(0);
+			}	
+
+			&:before {
+				position: absolute;
+				content: '';
+				cursor: pointer;
+				left: 0;
+				top: 0;
+				width: 40px;
+				height: 18px;
+				background: #D8D8D8;
+				border-radius: 100px;
+				margin: 0;
+			}			
+		}	
+
+		input:checked + label:after {
+            transform: translateX(-100%);
+        }
+	}	
 
 }
 
