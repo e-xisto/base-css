@@ -21,7 +21,7 @@ const templates = [
 
 const templatesHtmlPlugin = templates.map ( (template) => {
 	return new HtmlWebpackPlugin({
-		customData: { title: 'Abre el html que sea!!', lista: [ "guia.html", "sandbox.html", "..." ] },
+		customData: { title: 'BASE CSS', lista: [ "guia.html", "sandbox.html", "..." ] },
 		filename: __dirname + `/../../dist/${template}.html`,
 		template: __dirname + `/views/${template}.njk`
 	})
