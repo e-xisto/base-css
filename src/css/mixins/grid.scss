@@ -2,6 +2,11 @@
 
 @mixin make-columns($breakpoint, $columns) {
 
+	.col-#{$breakpoint}-offset-0, 
+	.col-#{$breakpoint}-offset-none {
+		margin-left: 0;
+	}	
+
 	@for $i from 1 through $columns {
 
 		.col-#{$breakpoint}-#{$i} {
