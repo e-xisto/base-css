@@ -16,6 +16,7 @@ const templates = [
 	'embed',
 	'flex',
 	'utilidades',
+	'collapse',
 	'guia'
 ];
 
