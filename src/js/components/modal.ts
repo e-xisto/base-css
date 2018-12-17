@@ -70,4 +70,14 @@ function hide(target?: string | null) {
 	}
 }
 
+
+	class Modal {
+
+		close(target?: string) {
+			hide(target);
+		}
+	}
+
+	(<any>window).Modal = new Modal();
+
 export default { init };
