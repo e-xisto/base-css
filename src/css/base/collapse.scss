@@ -1,0 +1,14 @@
+.collapse {
+	// opacity: 1;
+	overflow: hidden;
+	transition: height 0.4s ease-out;
+	height: auto;
+
+	&:not(.show) {
+		// opacity: 0;
+		// display: none;
+		// position: relative;
+		max-height: 0px;
+		margin: 0 !important;
+	}
+}
