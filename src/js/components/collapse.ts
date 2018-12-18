@@ -54,6 +54,7 @@ function show(element: HTMLElement) {
 
 	// mark the section as "currently not collapsed"
 	element.classList.add('show');
+	toggleButtons(element, true);
 }
 
 
@@ -71,8 +72,6 @@ function transitionedEventListener(e: Event) {
 
 function hide(element: HTMLElement) {
 
-	let button = getButton(element);
-	if (button) button.classList.remove('active');
 
 	if (element.classList.contains('show')) {
 
@@ -90,12 +89,17 @@ function hide(element: HTMLElement) {
 			});
 		});
 	}
+	toggleButtons(element, false);
 }
 
 
-function getButton(target: Element): Element | null {
-	let button = document.querySelector(`[data-action="collapse"][data-target="${target.id}"]`);
-	return button;
+function toggleButtons(target: Element, toggleActive: boolean) {
+
+	let buttons = document.querySelectorAll(`[data-action="collapse"][data-target="${target.id}"]`);
+	buttons.forEach((e: Element) => {
+		if (toggleActive) e.classList.add('active');
+		else e.classList.remove('active');
+	});
 }
 
 
