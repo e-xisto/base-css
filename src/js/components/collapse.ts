@@ -21,6 +21,7 @@ function init() {
 
 }
 
+
 function toggle(target: Element, button: Element) {
 
 	let parent: Element;
@@ -30,27 +31,70 @@ function toggle(target: Element, button: Element) {
 		if (parent) {
 			let others = parent.querySelectorAll(`[data-parent="${idParent}"]:not(#${target.id})`);
 			others.forEach((e: Element) => {
-				hide(parent, e);
+				hide(<HTMLElement>e);
 			});
 		}
 	}
 
-	let shown = target.classList.toggle('show');
-	button.classList.toggle('active', shown);
-
-
+	if (target.classList.contains('show')) hide(<HTMLElement>target);
+	else show(<HTMLElement>target);
+	// let shown = target.classList.toggle('show');
+	// button.classList.toggle('active', shown);
 }
 
-function hide(parent: Element, target: Element) {
 
-	let button = getButton(parent, target);
+function show(element: HTMLElement) {
+
+	var sectionHeight = element.scrollHeight;
+	// have the element transition to the height of its inner content
+	element.style.height = sectionHeight + 'px';
+
+	// when the next css transition finishes (which should be the one we just triggered)
+	element.addEventListener('transitionend', transitionedEventListener);
+
+	// mark the section as "currently not collapsed"
+	element.classList.add('show');
+}
+
+
+function transitionedEventListener(e: Event) {
+
+	let element = (<HTMLElement>e.target);
+	// remove this event listener so it only gets triggered once
+	element.removeEventListener('transitionend', transitionedEventListener);
+
+	// remove "height" from the element's inline styles, so it can return to its initial value
+	element.style.height = null;
+}
+
+
+
+function hide(element: HTMLElement) {
+
+	let button = getButton(element);
 	if (button) button.classList.remove('active');
-	target.classList.remove('show');
+
+	if (element.classList.contains('show')) {
+
+		var sectionHeight = element.scrollHeight;
+		var elementTransition = element.style.transition;
+		element.style.transition = '';
+
+		requestAnimationFrame(function() {
+			element.classList.remove('show');
+			element.style.height = sectionHeight + 'px';
+			element.style.transition = elementTransition;
+
+			requestAnimationFrame(function() {
+				element.style.height = 0 + 'px';
+			});
+		});
+	}
 }
 
 
-function getButton(parent: Element, target: Element): Element | null {
-	let button = parent.querySelector(`[data-action="collapse"][data-target="${target.id}"]`);
+function getButton(target: Element): Element | null {
+	let button = document.querySelector(`[data-action="collapse"][data-target="${target.id}"]`);
 	return button;
 }
 
