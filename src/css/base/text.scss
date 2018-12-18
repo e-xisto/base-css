@@ -52,11 +52,19 @@ p {
 	line-height: 1.5;
 }
 
+.bolder,
+.text-bolder { font-weight: $font-weight-bolder !important; }
+
 strong,
+.bold,
 .strong,
-.bold {
-	font-weight: bold !important;
-}
+.text-bold { font-weight: $font-weight-bold !important; }
+
+.text-normal,
+.normal { font-weight: $font-weight-normal !important; }
+
+.text-lighter,
+.light { font-weight: $font-weight-light !important; }
 
 
 .text-xs, .text-size-xs { font-size: 12px; }
