@@ -13,12 +13,26 @@ function init() {
 			event.preventDefault();
 			event.stopPropagation();
 
-			let targetName = item.getAttribute('data-target');
-			if (targetName) target = document.getElementById(targetName);
+			target = getTarget(item);
 			if (target) toggle(target, item);
+		} else {
+			let parent = item.closest('[data-action]');
+			if (parent && parent.getAttribute('data-action') == 'collapse') {
+				event.preventDefault();
+				event.stopPropagation();
+				target = getTarget(parent);
+				if (target) toggle(target, parent);
+			}
 		}
 	});
+}
 
+function getTarget(item: Element): Element | undefined {
+
+	let target;
+	let targetName = item.getAttribute('data-target');
+	if (targetName) target = <Element>document.getElementById(targetName);
+	return target;
 }
 
 
