@@ -20,9 +20,16 @@
     background-color: #fff;
     margin: 15% auto;
     padding: 30px 30px 15px 30px;
-    width: 80%; 
+    width: 600px; 
     border: 1px solid $color-gray;
 	border-radius: 4px;
+
+	&.modal-sm { width: 300px; }
+	&.modal-md { width: 600px; }
+	&.modal-lg { width: 900px; }
+	&.modal-fluid { width: 80%; }
+
+	@include breakpoint(xs) { width: 95% !important; }
 }
 
 .modal-header {}
