@@ -30,6 +30,7 @@
 	&.modal-fluid { width: 80%; }
 
 	@include breakpoint(xs) { width: 95% !important; }
+	@include breakpoint(sm) { max-width: 95% !important; }
 }
 
 .modal-header {}
