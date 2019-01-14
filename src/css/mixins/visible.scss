@@ -4,14 +4,14 @@
 
 	@each $break, $value in $breakpoints {
 
-		.visible-#{$break},
-		.visible-#{$break}-block,
-		.visible-#{$break}-inline,
-		.visible-#{$break}-inline-block,
-		.visible-#{$break}-flex,
-		.visible-#{$break}-inline-flex {
-			display: none;
-		}
+		// .visible-#{$break},
+		// .visible-#{$break}-block,
+		// .visible-#{$break}-inline,
+		// .visible-#{$break}-inline-block,
+		// .visible-#{$break}-flex,
+		// .visible-#{$break}-inline-flex {
+		// 	display: none;
+		// }
 		
 		@include breakpoint($break) {
 			.visible-#{$break} { display: block !important; }
