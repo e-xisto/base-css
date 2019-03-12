@@ -3,7 +3,7 @@ function init() {
 
 		let item = <Element>event.target;
 
-		if (item.classList.contains('tabs-item')) {
+		if (isHash(item.getAttribute('href')) && item.classList.contains('tabs-item')) {
 			event.preventDefault();
 			event.stopPropagation();
 
@@ -11,6 +11,12 @@ function init() {
 			show(item);
 		}
 	});
+}
+
+function isHash(id: string | null): boolean {
+
+	if (!id) return false;
+	return id.startsWith('#');
 }
 
 function active(tab: Element) {
@@ -29,8 +35,8 @@ function active(tab: Element) {
 
 function show(tab: Element) {
 
-	let id = <string>tab.getAttribute('href');
-	if (id.startsWith('#')) id = id.substr(1,id.length - 1);
+	let id = tab.getAttribute('href') ? <string>tab.getAttribute('href') : '';
+	if (isHash(id)) id = id.substr(1,id.length - 1);
 
 	let panel = <Element>document.getElementById(id);
 	if (!panel.classList.contains('show')) {
