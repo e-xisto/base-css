@@ -1,14 +1,3 @@
-
-// Variables
-
-$grid-total-cols: 12;
-$grid-column-gutter: 30px;
-$grid-container-width-lg: 1140px;
-$grid-container-width-md: 940px;
-$grid-container-width-sm: 720px;
-$grid-container-width-xs: 100%;
-
-
 // Container
 
 .container {
@@ -25,6 +14,7 @@ $grid-container-width-xs: 100%;
 
 .container-fluid {
 	width: 100%;
+	max-width: $grid-container-maxwidth;
 	margin-left: auto;
 	margin-right: auto;
 	box-sizing: border-box;

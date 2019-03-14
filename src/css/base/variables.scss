@@ -13,5 +13,167 @@ $breakpoints: (
 	lg: $media-lg
 );
 
+
+//
+//
+//
+//
+//
+//
+//
 // Tamaño de espacio base utilizado para margenes y padding
-$base-space-size: 1rem;
+$base-space-size: 15px;
+
+
+
+// Grid configuration
+
+$grid-total-cols: 12;
+$grid-column-gutter: 30px;
+$grid-container-width-lg: 1140px;
+$grid-container-width-md: 940px;
+$grid-container-width-sm: 720px;
+$grid-container-width-xs: 100%;
+$grid-container-maxwidth: none; // Limit for container-fluid with
+
+
+// Colors 
+
+$color-primary-dk: #0E5989;
+$color-primary-md: #186CA4;
+$color-primary: #3099DC;
+$color-primary-lt: #6EB6E9;
+$color-primary-br: #93CBF1;
+
+$color-secondary-dk: #5D1B2C;
+$color-secondary-md: #D13B62;
+$color-secondary: #FF4877;
+$color-secondary-lt: #FF8AA8;
+$color-secondary-br: #FFDDE6;
+
+$color-custom-1: #E2E2E2;
+$color-custom-2: #E2E2E2;
+$color-custom-3: #E2E2E2;
+$color-custom-4: #E2E2E2;
+
+$color-success: #15CD72;
+$color-warning: #F5B024;
+$color-danger: #ED4F32;
+$color-info: #1FC1EF;
+
+$color-black: #000;
+$color-dark: #222121;
+$color-midtone: #404040;
+$color-gray: #5D5D5D;
+$color-light: #ADADAD;
+$color-bright: #E3E3E3;
+$color-white: #FFFFFF;
+
+
+// Fonts
+
+$font-size-base: 16px;
+$font-scale-factor: 1.33;
+
+$font-family-base: 'Lato', sans-serif;
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-family-serif: 'Merriweather', serif;
+
+$font-weight-bolder: 900;
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+$font-weight-thin: 100;
+
+
+// Text
+
+$text-color: $color-gray;
+$text-header-color: $color-primary;
+
+$text-display-font-size: 56px;
+$text-display-line-height: 60px;
+$text-display-font-family: $font-family-sans-serif;
+$text-display-color: $text-header-color;
+$text-display-margin-top: 0px;
+$text-display-margin-bottom: $base-space-size;
+$text-display-text-transform: none;
+
+$text-h1-font-size: 40px;
+$text-h1-line-height: 48px;
+$text-h1-font-family: $font-family-sans-serif;
+$text-h1-color: $text-header-color;
+$text-h1-margin-top: 0px;
+$text-h1-margin-bottom: $base-space-size;
+$text-h1-text-transform: none;
+
+$text-h2-font-size: 40px;
+$text-h2-line-height: 48px;
+$text-h2-font-family: $font-family-sans-serif;
+$text-h2-color: $text-header-color;
+$text-h2-margin-top: 0px;
+$text-h2-margin-bottom: $base-space-size;
+$text-h2-text-transform: none;
+
+$text-h3-font-size: 24px;
+$text-h3-line-height: 32px;
+$text-h3-font-family: $font-family-sans-serif;
+$text-h3-color: $text-header-color;
+$text-h3-margin-top: 0px;
+$text-h3-margin-bottom: $base-space-size;
+$text-h3-text-transform: none;
+
+$text-h4-font-size: 18px;
+$text-h4-line-height: 28px;
+$text-h4-font-family: $font-family-sans-serif;
+$text-h4-color: $text-header-color;
+$text-h4-margin-top: 0px;
+$text-h4-margin-bottom: $base-space-size;
+$text-h4-text-transform: none;
+
+$text-h5-font-size: 16px;
+$text-h5-line-height: 24px;
+$text-h5-font-family: $font-family-sans-serif;
+$text-h5-color: $text-header-color;
+$text-h5-margin-top: 0px;
+$text-h5-margin-bottom: $base-space-size;
+$text-h5-text-transform: none;
+
+$text-h6-font-size: 14px;
+$text-h6-line-height: 20px;
+$text-h6-font-family: $font-family-sans-serif;
+$text-h6-color: $text-header-color;
+$text-h6-margin-top: 0px;
+$text-h6-margin-bottom: $base-space-size;
+$text-h6-text-transform: none;
+
+$text-paragraph-font-size: 16px;
+$text-paragraph-line-height: 24px;
+$text-paragraph-font-family: $font-family-sans-serif;
+$text-paragraph-color: $text-color;
+$text-paragraph-margin-top: 0px;
+$text-paragraph-margin-bottom: $base-space-size;
+$text-paragraph-text-transform: none;
+
+$text-size-xs: 12px/18px !important;
+$text-size-sm: 14px/20px !important;
+$text-size-md: 16px/24px !important;
+$text-size-lg: 18px/28px !important;
+$text-size-xl: 24px/32px !important;
+
+$text-link-color: $color-primary;
+$text-link-color-hover: $color-primary;
+$text-link-decoration: underline;
+$text-link-decoration-hover: underline;
+$text-link-font-weight: $font-weight-normal;
+
+$text-list-margin-bottom: $base-space-size;
+$text-list-padding-left: $base-space-size * 2;
+
+
+
+
+
+
+
+

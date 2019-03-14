@@ -1,64 +1,99 @@
-// Variables
+// Type display classes
 
-$font-header-color: black;
-$font-text-color: map-get($grayscale, dark);
-
-
-// Headings
-
-h1, h2, h3, h4, h5, h6, 
-.h1, .h2, .h3, .h4, .h5, .h6 {
-	color: $font-header-color;
-	margin-top: 0;
-	margin-bottom: $base-space-size;
-	line-height: 1.2;
+.display {
+	color: $text-display-color;
+	font-size: $text-display-font-size;
+	line-height: $text-display-line-height;
+	font-family: $text-display-font-family;
+	margin-top: $text-display-margin-top;
+	margin-bottom: $text-display-margin-bottom;
+	text-transform: $text-display-text-transform;
 }
 
-
 h1, .h1 {
-	font-size: pow($font-scale-factor, 4) * 1em;	
+	color: $text-h1-color;
+	font-size: $text-h1-font-size;
+	line-height: $text-h1-line-height;
+	font-family: $text-h1-font-family;
+	margin-top: $text-h1-margin-top;
+	margin-bottom: $text-h1-margin-bottom;
+	text-transform: $text-h1-text-transform;	
 }
 
 h2, .h2 {
-	font-size: pow($font-scale-factor, 3) * 1em;
+	color: $text-h2-color;
+	font-size: $text-h2-font-size;
+	line-height: $text-h2-line-height;
+	font-family: $text-h2-font-family;
+	margin-top: $text-h2-margin-top;
+	margin-bottom: $text-h2-margin-bottom;
+	text-transform: $text-h2-text-transform;
 }
 
 h3, .h3 {
-	font-size: pow($font-scale-factor, 2) * 1em;
+	color: $text-h3-color;
+	font-size: $text-h3-font-size;
+	line-height: $text-h3-line-height;
+	font-family: $text-h3-font-family;
+	margin-top: $text-h3-margin-top;
+	margin-bottom: $text-h3-margin-bottom;
+	text-transform: $text-h3-text-transform;
 }
 
 h4, .h4 {
-	font-size: pow($font-scale-factor, 1) * 1em;
+	color: $text-h4-color;
+	font-size: $text-h4-font-size;
+	line-height: $text-h4-line-height;
+	font-family: $text-h4-font-family;
+	margin-top: $text-h4-margin-top;
+	margin-bottom: $text-h4-margin-bottom;
+	text-transform: $text-h4-text-transform;
 }
 
 h5, .h5 {
-	font-size: 1.25em;
-	line-height: 1.1;
+	color: $text-h5-color;
+	font-size: $text-h5-font-size;
+	line-height: $text-h5-line-height;
+	font-family: $text-h5-font-family;
+	margin-top: $text-h5-margin-top;
+	margin-bottom: $text-h5-margin-bottom;
+	text-transform: $text-h5-text-transform;
 }
 
 h6, .h6 {
-	font-size: 1em;
-	line-height: 1.1;
+	color: $text-h6-color;
+	font-size: $text-h6-font-size;
+	line-height: $text-h6-line-height;
+	font-family: $text-h6-font-family;
+	margin-top: $text-h6-margin-top;
+	margin-bottom: $text-h6-margin-bottom;
+	text-transform: $text-h6-text-transform;
 }
+
 
 // Paragraphs
 
 p {
-	color: $font-text-color;
-	font-family: $font-family-sans-serif;
-	font-size: 1em;
-	margin-top: 0;
-	margin-bottom: $base-space-size;
-	line-height: 1.5;
+	color: $text-paragraph-color;
+	font-size: $text-paragraph-font-size;
+	line-height: $text-paragraph-line-height;
+	font-family: $text-paragraph-font-family;
+	margin-top: $text-paragraph-margin-top;
+	margin-bottom: $text-paragraph-margin-bottom;
+	text-transform: $text-paragraph-text-transform;
 }
 
-.bolder,
-.text-bolder { font-weight: $font-weight-bolder !important; }
+.text-xs, .text-size-xs { font: $text-size-xs; }
+.text-sm, .text-size-sm { font: $text-size-sm; }
+.text-md, .text-size-md { font: $text-size-md; }
+.text-lg, .text-size-lg { font: $text-size-lg; }
+.text-xl, .text-size-xl { font: $text-size-xl; }
 
-strong,
-.bold,
-.strong,
-.text-bold { font-weight: $font-weight-bold !important; }
+.text-bolder,
+.bolder { font-weight: $font-weight-bolder !important; }
+
+.text-bold,
+strong, .bold, .strong { font-weight: $font-weight-bold !important; }
 
 .text-normal,
 .normal { font-weight: $font-weight-normal !important; }
@@ -66,21 +101,22 @@ strong,
 .text-lighter,
 .light { font-weight: $font-weight-light !important; }
 
+.text-thin,
+.thin { font-weight: $font-weight-thin !important; }
 
-.text-xs, .text-size-xs { font-size: 12px; }
-.text-sm, .text-size-sm { font-size: 14px; }
-.text-md, .text-size-md { font-size: 16px; }
-.text-lg, .text-size-lg { font-size: 18px; }
-.text-xl, .text-size-xl { font-size: 24px; }
-.text-xxl, .text-size-xxl { font-size: 30px; }
+
 
 // Links
 
 a {
-	text-decoration: underline;
+	color: $text-link-color;
+	text-decoration: $text-link-decoration;
+	font-weight: $text-link-font-weight;
 
 	&:hover,
 	&:focus {
+		color: $text-link-color-hover;
+		text-decoration: $text-link-decoration-hover;
 	}
 }
 
@@ -93,6 +129,11 @@ h5 a, .h5 a,
 h6 a, .h6 a {
   color: inherit;
   text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}  
 }
 
 
@@ -136,22 +177,6 @@ ol ol ol li {
 	display: inline-block;
 	padding-right: 5px;
 	padding-left: 5px;
-}
-
-
-
-// Type display classes
-
-.display-1 {
-	
-}
-
-.display-2 {
-
-}
-
-.display-3 {
-
 }
 
 hr {
@@ -225,7 +250,7 @@ blockquote {
 	padding-left: 1em;
 	border-left: 4px solid rgba(0, 0, 0, .1);
 	font-style: italic;
-	color: rgba($font-text-color, .65);
+	color: rgba($text-color, .65);
 	& p {
     	margin-bottom: .5rem;
 	}
@@ -238,7 +263,7 @@ pre, code, samp, var, kbd {
 code {
 	display: block;
 	background: map-get($grayscale, light);
-	color: rgba($font-text-color, .85);
+	color: rgba($text-color, .85);
 	padding: 15px;
 }
 
@@ -253,7 +278,7 @@ pre code {
 	top: 0;
     display: block;
     line-height: 1.2;
-    color: rgba($font-text-color, .85);
+    color: rgba($text-color, .85);
 	overflow: none;
 	white-space: pre-wrap;
 }
