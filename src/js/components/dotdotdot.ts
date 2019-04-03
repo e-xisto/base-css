@@ -7,7 +7,7 @@ function init() {
 		dotdotdot.push(<HTMLElement>element);
 	}
 
-	// document.addEventListener('resize', cutElements);
+	document.addEventListener('resize', cutElements);
 	cutElements();
 }
 
