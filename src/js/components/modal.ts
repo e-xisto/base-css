@@ -12,6 +12,17 @@ function init() {
 			event.stopPropagation();
 
 			show(target);
+		} else {
+			let parent = item.closest('[data-action]');
+			if (parent && parent.getAttribute('data-action') == 'modal-open') {
+				let target = parent.getAttribute('data-target');
+				if (target) {
+					event.preventDefault();
+					event.stopPropagation();
+
+					show(target);
+				}
+			}
 		}
 		if (action == 'modal-close') {
 			event.preventDefault();
