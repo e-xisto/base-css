@@ -87,6 +87,10 @@ function hide(target?: string | null) {
 		close(target?: string) {
 			hide(target);
 		}
+
+		open(target: string) {
+			show(target);
+		}
 	}
 
 	(<any>window).Modal = new Modal();

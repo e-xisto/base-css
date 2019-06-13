@@ -12,6 +12,8 @@
 
 			<a onclick="console.log('demo 3')" class="btn btn-outlined-secondary btn-md btn-block mt-xxl" data-action="modal-open" data-target="modal-demo-3">Modal</a>
 
+			<a onclick="abrirModal()" class="btn btn-outlined-secondary btn-md btn-block mt-xxl">Abrir por js</a>
+
 		</div>
 	</div>
 </div>
@@ -74,6 +76,12 @@
 
 	</div>
 
+	<script>
 
+		function abrirModal() {
+			Modal.open('modal-demo-1');
+		}
+
+	</script>
 
 {% endblock %}
