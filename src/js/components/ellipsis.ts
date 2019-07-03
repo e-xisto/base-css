@@ -1,18 +1,21 @@
 
-let ellipsis = new Array<HTMLElement>();
+let ellipses = new Array<HTMLElement>();
 
 function init() {
-	let elements = Array.from(document.getElementsByClassName('ellipsis'));
-	for (let element of elements) {
-		ellipsis.push(<HTMLElement>element);
-	}
+	document.addEventListener("DOMContentLoaded", function (event) {
 
-	document.addEventListener('resize', cutElements);
-	cutElements();
+		let elements = Array.from(document.getElementsByClassName('ellipsis'));
+		for (let element of elements) {
+			ellipses.push(<HTMLElement>element);
+		}
+
+		document.addEventListener('resize', cutElements);
+		cutElements();
+	});
 }
 
 function cutElements() {
-	for (let element of ellipsis) {
+	for (let element of ellipses) {
 		if (element.getAttribute('data-ellipsis')) {
 			cutLines(element, Number(element.getAttribute('data-ellipsis')));
 		}
