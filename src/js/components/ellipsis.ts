@@ -4,14 +4,24 @@ let ellipses = new Array<HTMLElement>();
 function init() {
 	document.addEventListener("DOMContentLoaded", function (event) {
 
-		let elements = Array.from(document.getElementsByClassName('ellipsis'));
-		for (let element of elements) {
-			ellipses.push(<HTMLElement>element);
-		}
+		updateEllipseElements();
 
 		document.addEventListener('resize', cutElements);
+		document.addEventListener("DOMNodeInserted", function () {
+			updateEllipseElements();
+			cutElements();
+		});
 		cutElements();
 	});
+}
+
+
+function updateEllipseElements() {
+
+	let elements = Array.from(document.getElementsByClassName('ellipsis'));
+	for (let element of elements) {
+		ellipses.push(<HTMLElement>element);
+	}
 }
 
 function cutElements() {
