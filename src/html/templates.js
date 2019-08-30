@@ -17,6 +17,7 @@ const templates = [
 	'flex',
 	'utilidades',
 	'collapse',
+	'parallax',
 	'guia'
 ];
 

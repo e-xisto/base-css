@@ -22,7 +22,9 @@
 		"url": "https://github.com/e-xisto/base-css/issues"
 	},
 	"homepage": "https://github.com/e-xisto/base-css#readme",
-	"dependencies": {},
+	"dependencies": {
+		"simple-parallax-js": "^5.1.0"
+	},
 	"devDependencies": {
 		"css-loader": "^1.0.0",
 		"extract-loader": "^3.0.0",

@@ -7,8 +7,9 @@ function init() {
 	document.addEventListener('click', (event: Event) => {
 
 		let item = <Element>event.target;
+		let parent = item.parentElement;
 
-		if (item.classList.contains('dropdown-toggle')) {
+		if (item.classList.contains('dropdown-toggle') || (parent && parent.classList.contains('dropdown-toggle'))) {
 			event.preventDefault();
 			event.stopPropagation();
 
