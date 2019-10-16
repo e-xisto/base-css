@@ -180,4 +180,12 @@
     user-select: none;
 }
 
-.noscroll { overflow: hidden !important; }
+.noscroll {
+	overflow: hidden !important;
+	position: fixed;
+}
+
+body.noscroll,
+html.noscroll {
+	width: 100%;
+}
