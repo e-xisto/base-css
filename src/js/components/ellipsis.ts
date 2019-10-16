@@ -18,10 +18,12 @@ function init() {
 
 function updateEllipseElements() {
 
-	let elements = Array.from(document.getElementsByClassName('ellipsis'));
-	for (let element of elements) {
-		ellipses.push(<HTMLElement>element);
-	}
+	// let elements = Array.from(document.getElementsByClassName('ellipsis'));
+	// for (let element of elements) {
+	// 	if(!ellipses.includes(<HTMLElement>element)) ellipses.push(<HTMLElement>element);
+	// }
+	ellipses = <Array<HTMLElement>>Array.from(document.getElementsByClassName('ellipsis'));
+
 }
 
 function cutElements() {

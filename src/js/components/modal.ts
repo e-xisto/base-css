@@ -1,5 +1,6 @@
 
 let modalActive = new Array<HTMLElement>();
+let modals = new Map();
 
 function init() {
 	document.addEventListener('click', (event: Event) => {
@@ -45,9 +46,21 @@ function init() {
 	});
 }
 
-function show(target: string) {
+function show(target: string, data?: any) {
+
 	let element = document.getElementById(target);
 	if (element) {
+		if (data) {
+			if (!getHtml(element)) storeHtml(element);
+
+			let html = getHtml(element);
+			for(let attr in data) {
+				html = html.replace(new RegExp('\\{\\{' + attr + '\\}\\}', 'gi'), data[attr]);
+			}
+			element.innerHTML = html;
+		}
+
+
 		element.classList.add('show');
 		element.scrollTop = 0;
 		let index = modalActive.push(element) - 1;
@@ -81,6 +94,17 @@ function hide(target?: string | null) {
 	}
 }
 
+function getHtml(element: HTMLElement): string {
+	if (!modals.has(element.getAttribute('id'))) return '';
+	return modals.get(element.getAttribute('id'));
+}
+
+function storeHtml(element: HTMLElement) {
+	if (element.getAttribute('id')) {
+		modals.set(element.getAttribute('id'), element.innerHTML);
+	}
+}
+
 
 	class Modal {
 
@@ -88,8 +112,8 @@ function hide(target?: string | null) {
 			hide(target);
 		}
 
-		open(target: string) {
-			show(target);
+		open(target: string, data?: any) {
+			show(target, data);
 		}
 	}
 
