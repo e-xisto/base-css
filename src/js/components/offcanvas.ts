@@ -6,7 +6,7 @@ function init() {
 		let item = <Element>event.target;
 
 		if (item.getAttribute('data-action') == 'offcanvas') {
-			event.preventDefault();
+			event.preventDefault(); //quitamos el prevent default porque me quita comportamiento por defecto de los <a>
 
 			toggle(item.getAttribute('data-target'), item);
 		} else {
@@ -73,7 +73,7 @@ function backdrop(shown: boolean, target: string, offcanvas: HTMLElement) {
 			elem.setAttribute('data-action', 'offcanvas');
 			elem.setAttribute('data-target', target);
 		}
-		
+
 		document.body.appendChild(elem);
 	}
 	document.body.classList.toggle('noscroll', shown);
