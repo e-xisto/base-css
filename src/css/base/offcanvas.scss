@@ -67,11 +67,11 @@ $offcanvas-zindex: 999;
 		max-height: 100%;
 		bottom: auto;
 		left: auto;
-		transform: translateY(-100%);
+		top: -100%;
 		visibility: hidden;
 
 		&.show {
-			transform: translateY(0);
+			top: 0;
 			visibility: visible;
 		}
 	}
@@ -81,14 +81,13 @@ $offcanvas-zindex: 999;
 		width: 100%;
 		height: $offcanvas-height;
 		max-height: 100%;
-		bottom: 0;
+		bottom: -100%;
 		top: auto;
 		left: auto;
-		transform: translateY(100%);
 		visibility: hidden;
 
 		&.show {
-			transform: translateY(0);
+			bottom: 0;
 			visibility: visible;
 		}
 	}
