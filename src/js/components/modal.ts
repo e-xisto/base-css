@@ -112,8 +112,9 @@ function storeHtml(element: HTMLElement) {
 			hide(target);
 		}
 
-		open(target: string, data?: any) {
+		open(target: string, data?: any, callback?: CallableFunction) {
 			show(target, data);
+			if (callback) callback(data);
 		}
 	}
 
