@@ -30,6 +30,11 @@ function init() {
 			event.stopPropagation();
 
 			hide(target);
+		} else {
+			let parent = item.closest('[data-action]');
+			if (parent && parent.getAttribute('data-action') == 'modal-close') {
+				hide();
+			}
 		}
 
 		if (item.classList.contains('modal') && item.classList.contains('show') && !item.classList.contains('modal-noclick')) {
