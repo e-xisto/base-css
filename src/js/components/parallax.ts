@@ -1,4 +1,4 @@
-import * as simpleParallax from 'simple-parallax-js'; // https://simpleparallax.com/
+// import * as simpleParallax from 'simple-parallax-js'; // https://simpleparallax.com/
 
 
 let elements: NodeListOf<HTMLElement>;
@@ -10,7 +10,6 @@ function init() {
 	elements.forEach(function (element) {
 		let options = loadDataOptions(element);
 
-		let parallax = new simpleParallax(element, options);
 	});
 
 }

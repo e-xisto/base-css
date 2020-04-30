@@ -79,7 +79,7 @@ function transitionedEventListener(e: Event) {
 	element.removeEventListener('transitionend', transitionedEventListener);
 
 	// remove "height" from the element's inline styles, so it can return to its initial value
-	element.style.height = null;
+	delete element.style.height;
 }
 
 
